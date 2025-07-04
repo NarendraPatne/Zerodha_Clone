@@ -105,7 +105,7 @@ const WatchListItem = ({ stock }) => {
   const handleMouseEnter = (e) => {
     setShowWatchlistActions(true);
   };
-
+  
   const handleMouseLeave = (e) => {
     setShowWatchlistActions(false);
   };
@@ -135,6 +135,9 @@ const WatchListActions = ({ uid }) => {
   const handleBuyClick = () => {
     generalContext.openBuyWindow(uid);
   };
+  const handleSellClick = () => {
+    generalContext.openSellWindow(uid);
+  };
 
   return (
     <span className="actions">
@@ -152,6 +155,7 @@ const WatchListActions = ({ uid }) => {
           title="Sell (S)"
           placement="top"
           arrow
+          onClick={handleSellClick}
           TransitionComponent={Grow}
         >
           <button className="sell">Sell</button>
